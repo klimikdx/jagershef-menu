@@ -11,7 +11,7 @@ const menuItems = [
   { id: 5, name: "Грибной суп-пюре", desc: "Шампиньоны, сливки, лук, картофель, чеснок и свежая зелень", price: 1590, category: "soups", image: "https://picsum.photos/id/669/800/600" },
 
   // ПИЦЦА
-  { id: 6, name: "Пепперони", desc: "Томатный соус, моцарелла, пикантная колбаса пепперони", price: 2590, category: "pizza", image: "https://picsuhttps://images.pexels.com/photos/4109137/pexels-photo-4109137.jpegm.photos/id/201/800/600" },
+  { id: 6, name: "Пепперони", desc: "Томатный соус, моцарелла, пикантная колбаса пепперони", price: 2590, category: "pizza", image: "https://picsuimage: "https://images.pexels.com/photos/4109137/pexels-photo-4109137.jpeg?auto=compress&cs=tinysrgb&w=800"https://images.pexels.com/photos/4109137/pexels-photo-4109137.jpegm.photos/id/201/800/600" },
   { id: 7, name: "Маргарита", desc: "Томатный соус, моцарелла, свежие помидоры и базилик", price: 2290, category: "pizza", image: "https://picsum.photos/id/292/800/600" },
   { id: 8, name: "4 Сыра", desc: "Моцарелла, дорблю, пармезан, чеддер и сливочный соус", price: 2790, category: "pizza", image: "https://picsum.photos/id/870/800/600" },
   { id: 9, name: "Мясная BBQ", desc: "Курица, говядина, бекон, соус BBQ и моцарелла", price: 3190, category: "pizza", image: "https://picsum.photos/id/106/800/600" },
