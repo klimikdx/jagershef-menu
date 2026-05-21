@@ -4,32 +4,32 @@ import { useState } from 'react';
 
 const menuItems = [
   // СУПЫ
-  { id: 1, name: "Том Ям с креветками", desc: "Креветки, шампиньоны, кокосовое молоко, паста Том Ям, лайм и кинза", price: 2290, category: "soups", image: "https://picsum.photos/id/292/800/600" },
-  { id: 2, name: "Куриный суп с лапшой", desc: "Куриное филе, домашняя лапша, морковь, картофель, зелень и специи", price: 1490, category: "soups", image: "https://picsum.photos/id/431/800/600" },
-  { id: 3, name: "Сырный крем-суп", desc: "Плавленый сыр, сливки, картофель, лук и хрустящие сухарики", price: 1690, category: "soups", image: "https://picsum.photos/id/870/800/600" },
-  { id: 4, name: "Борщ со сметаной", desc: "Говядина, свекла, капуста, картофель, морковь и свежая сметана", price: 1590, category: "soups", image: "https://picsum.photos/id/1080/800/600" },
-  { id: 5, name: "Грибной суп-пюре", desc: "Шампиньоны, сливки, лук, картофель, чеснок и свежая зелень", price: 1590, category: "soups", image: "https://picsum.photos/id/669/800/600" },
+  { id: 1, name: "Том Ям с креветками", desc: "Креветки, шампиньоны, кокосовое молоко, паста Том Ям, лайм и кинза", price: 2290, category: "soups", image: "https://unsplash.com/photos/spicy-shrimp-soup-with-rice-and-decorative-items-zb6GZ6e2VR0?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" },
+  { id: 2, name: "Куриный суп с лапшой", desc: "Куриное филе, домашняя лапша, морковь, картофель, зелень и специи", price: 1490, category: "soups", image: "https://unsplash.com/photos/a-plate-of-food-fXwZ68_VvkQ?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" },
+  { id: 3, name: "Сырный крем-суп", desc: "Плавленый сыр, сливки, картофель, лук и хрустящие сухарики", price: 1690, category: "soups", image: "https://unsplash.com/photos/a-bowl-of-soup-with-a-piece-of-bread-sticking-out-of-it-RFQTIuHzZsc?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" },
+  { id: 4, name: "Борщ со сметаной", desc: "Говядина, свекла, капуста, картофель, морковь и свежая сметана", price: 1590, category: "soups", image: "https://unsplash.com/photos/soup-in-black-ceramic-bowl-beside-white-ceramic-bowl-on-brown-wooden-table-sJX3g_ftxcE?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" },
+  { id: 5, name: "Грибной суп-пюре", desc: "Шампиньоны, сливки, лук, картофель, чеснок и свежая зелень", price: 1590, category: "soups", image: "https://unsplash.com/photos/a-bowl-of-creamy-soup-with-tapioca-pearls-1aQIAM9iZRc?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" },
 
   // ПИЦЦА
-  { id: 6, name: "Пепперони", desc: "Томатный соус, моцарелла, пикантная колбаса пепперони", price: 2590, category: "pizza", image: "https://picsum.photos/id/201/800/600" },
-  { id: 7, name: "Маргарита", desc: "Томатный соус, моцарелла, свежие помидоры и базилик", price: 2290, category: "pizza", image: "https://picsum.photos/id/292/800/600" },
-  { id: 8, name: "4 Сыра", desc: "Моцарелла, дорблю, пармезан, чеддер и сливочный соус", price: 2790, category: "pizza", image: "https://picsum.photos/id/870/800/600" },
-  { id: 9, name: "Мясная BBQ", desc: "Курица, говядина, бекон, соус BBQ и моцарелла", price: 3190, category: "pizza", image: "https://picsum.photos/id/106/800/600" },
-  { id: 10, name: "Овощная", desc: "Болгарский перец, помидоры, оливки, грибы и моцарелла", price: 2390, category: "pizza", image: "https://picsum.photos/id/431/800/600" },
+  { id: 6, name: "Пепперони", desc: "Томатный соус, моцарелла, пикантная колбаса пепперони", price: 2590, category: "pizza", image: "https://unsplash.com/photos/pizza-with-cheese-and-tomato-_P76trHTWDE?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" },
+  { id: 7, name: "Маргарита", desc: "Томатный соус, моцарелла, свежие помидоры и базилик", price: 2290, category: "pizza", image: "https://unsplash.com/photos/a-pizza-with-tomatoes-and-basil-otZSAyb65_o?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" },
+  { id: 8, name: "4 Сыра", desc: "Моцарелла, дорблю, пармезан, чеддер и сливочный соус", price: 2790, category: "pizza", image: "https://unsplash.com/photos/a-pizza-sitting-on-top-of-a-wooden-cutting-board-7wM-Ad3p56E?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" },
+  { id: 9, name: "Мясная BBQ", desc: "Курица, говядина, бекон, соус BBQ и моцарелла", price: 3190, category: "pizza", image: "https://unsplash.com/photos/a-close-up-of-a-delicious-barbecue-chicken-pizza-RDN2HrQghCY?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" },
+  { id: 10, name: "Овощная", desc: "Болгарский перец, помидоры, оливки, грибы и моцарелла", price: 2390, category: "pizza", image: "https://unsplash.com/photos/a-delicious-pizza-loaded-with-toppings-Cqg9B-JRteI?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" },
 
   // ГОРЯЧИЕ БЛЮДА
-  { id: 11, name: "Стейк из говядины", desc: "Говяжий стейк, картофель по-деревенски, перечный соус", price: 4890, category: "hot", image: "https://picsum.photos/id/1080/800/600" },
-  { id: 12, name: "Курица в сливочном соусе", desc: "Куриное филе, сливочный соус, грибы и ароматные специи", price: 2890, category: "hot", image: "https://picsum.photos/id/669/800/600" },
-  { id: 13, name: "Паста Карбонара", desc: "Спагетти, бекон, сливки, пармезан и яйцо", price: 2590, category: "hot", image: "https://picsum.photos/id/201/800/600" },
-  { id: 14, name: "Плов по-восточному", desc: "Рис, говядина, морковь, лук и зира", price: 2290, category: "hot", image: "https://picsum.photos/id/292/800/600" },
+  { id: 11, name: "Стейк из говядины", desc: "Говяжий стейк, картофель по-деревенски, перечный соус", price: 4890, category: "hot", image: "https://unsplash.com/photos/cooked-meat-on-tray-NYBnDWeOX2c?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" },
+  { id: 12, name: "Курица в сливочном соусе", desc: "Куриное филе, сливочный соус, грибы и ароматные специи", price: 2890, category: "hot", image: "https://unsplash.com/photos/a-white-plate-topped-with-rice-and-meat-covered-in-gravy-QvgHLCOpdJQ?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" },
+  { id: 13, name: "Паста Карбонара", desc: "Спагетти, бекон, сливки, пармезан и яйцо", price: 2590, category: "hot", image: "https://unsplash.com/photos/a-colorful-plate-of-food-on-a-wooden-table-SS_ZRNz6-K0?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" },
+  { id: 14, name: "Плов по-восточному", desc: "Рис, говядина, морковь, лук и зира", price: 2290, category: "hot", image: "https://unsplash.com/photos/a-white-plate-topped-with-fish-and-vegetables-3ru16c1mSsU?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" },
   { id: 15, name: "Лосось на гриле", desc: "Филе лосося, лимон, овощи гриль и специи", price: 3990, category: "hot", image: "https://picsum.photos/id/870/800/600" },
 
   // НАПИТКИ
-  { id: 16, name: "Мохито безалкогольный", desc: "Лайм, свежая мята, сахарный сироп, газированная вода", price: 890, category: "drinks", image: "https://picsum.photos/id/431/800/600" },
-  { id: 17, name: "Клубничный лимонад", desc: "Свежая клубника, лимон, сироп и газированная вода", price: 790, category: "drinks", image: "https://picsum.photos/id/669/800/600" },
-  { id: 18, name: "Капучино", desc: "Эспрессо, молоко и нежная молочная пенка", price: 690, category: "drinks", image: "https://picsum.photos/id/201/800/600" },
-  { id: 19, name: "Апельсиновый фреш", desc: "Свежевыжатый сок из натуральных апельсинов", price: 890, category: "drinks", image: "https://picsum.photos/id/292/800/600" },
-  { id: 20, name: "Чай с ягодами", desc: "Черный чай, малина, клубника и натуральный мед", price: 690, category: "drinks", image: "https://picsum.photos/id/1080/800/600" },
+  { id: 16, name: "Мохито безалкогольный", desc: "Лайм, свежая мята, сахарный сироп, газированная вода", price: 890, category: "drinks", image: "https://unsplash.com/photos/a-glass-jar-with-a-plant-inside-WLUnyJib5OU?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" },
+  { id: 17, name: "Клубничный лимонад", desc: "Свежая клубника, лимон, сироп и газированная вода", price: 790, category: "drinks", image: "https://unsplash.com/photos/a-glass-of-red-liquid-with-a-slice-of-lemon-and-a-few-coins-97DxxxqGzxY?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" },
+  { id: 18, name: "Капучино", desc: "Эспрессо, молоко и нежная молочная пенка", price: 690, category: "drinks", image: "https://unsplash.com/photos/white-ceramic-teacup-with-latte-RFLDagtOsMM?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" },
+  { id: 19, name: "Апельсиновый фреш", desc: "Свежевыжатый сок из натуральных апельсинов", price: 890, category: "drinks", image: "https://unsplash.com/photos/orange-juice-in-clear-drinking-glass-kkrXVKK-jhg?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" },
+  { id: 20, name: "Чай с ягодами", desc: "Черный чай, малина, клубника и натуральный мед", price: 690, category: "drinks", image: "https://picsum.photohttps://unsplash.com/photos/black-ceramic-teapot-with-cups-mumpl9-D7Uc?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLinks/id/1080/800/600" },
 ];
 
 export default function JagerShefMenu() {
