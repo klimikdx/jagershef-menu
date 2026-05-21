@@ -3,14 +3,14 @@
 import { useState } from 'react';
 
 const menuItems = [
-  // === СУПЫ ===
+  // СУПЫ
   {
     id: 1,
     name: "Том Ям с креветками",
     desc: "Креветки, шампиньоны, кокосовое молоко, паста Том Ям, лайм и кинза",
     price: 2290,
     category: "soups",
-    image: "https://picsum.photos/id/292/800/600",
+    image: "https://picsum.photos/id/292/800/600", // Том Ям
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const menuItems = [
     desc: "Куриное филе, домашняя лапша, морковь, картофель, зелень и специи",
     price: 1490,
     category: "soups",
-    image: "https://picsum.photos/id/431/800/600",
+    image: "https://picsum.photos/id/431/800/600", // Куриный суп
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const menuItems = [
     desc: "Плавленый сыр, сливки, картофель, лук и хрустящие сухарики",
     price: 1690,
     category: "soups",
-    image: "https://picsum.photos/id/870/800/600",
+    image: "https://picsum.photos/id/870/800/600", // Сырный суп
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ const menuItems = [
     desc: "Говядина, свекла, капуста, картофель, морковь и свежая сметана",
     price: 1590,
     category: "soups",
-    image: "https://picsum.photos/id/1080/800/600",
+    image: "https://picsum.photos/id/1080/800/600", // Борщ
   },
   {
     id: 5,
@@ -42,17 +42,17 @@ const menuItems = [
     desc: "Шампиньоны, сливки, лук, картофель, чеснок и свежая зелень",
     price: 1590,
     category: "soups",
-    image: "https://picsum.photos/id/669/800/600",
+    image: "https://picsum.photos/id/669/800/600", // Грибной суп
   },
 
-  // === ПИЦЦА ===
+  // ПИЦЦА
   {
     id: 6,
     name: "Пепперони",
     desc: "Томатный соус, моцарелла, пикантная колбаса пепперони",
     price: 2590,
     category: "pizza",
-    image: "https://picsum.photos/id/201/800/600",
+    image: "https://picsum.photos/id/201/800/600", // Пепперони
   },
   {
     id: 7,
@@ -60,7 +60,7 @@ const menuItems = [
     desc: "Томатный соус, моцарелла, свежие помидоры и базилик",
     price: 2290,
     category: "pizza",
-    image: "https://picsum.photos/id/292/800/600",
+    image: "https://picsum.photos/id/292/800/600", // Маргарита
   },
   {
     id: 8,
@@ -68,7 +68,7 @@ const menuItems = [
     desc: "Моцарелла, дорблю, пармезан, чеддер и сливочный соус",
     price: 2790,
     category: "pizza",
-    image: "https://picsum.photos/id/870/800/600",
+    image: "https://picsum.photos/id/870/800/600", // 4 сыра
   },
   {
     id: 9,
@@ -76,7 +76,7 @@ const menuItems = [
     desc: "Курица, говядина, бекон, соус BBQ и моцарелла",
     price: 3190,
     category: "pizza",
-    image: "https://picsum.photos/id/106/800/600",
+    image: "https://picsum.photos/id/106/800/600", // Мясная
   },
   {
     id: 10,
@@ -84,17 +84,17 @@ const menuItems = [
     desc: "Болгарский перец, помидоры, оливки, грибы и моцарелла",
     price: 2390,
     category: "pizza",
-    image: "https://picsum.photos/id/431/800/600",
+    image: "https://picsum.photos/id/431/800/600", // Овощная
   },
 
-  // === ГОРЯЧИЕ БЛЮДА ===
+  // ГОРЯЧИЕ БЛЮДА
   {
     id: 11,
     name: "Стейк из говядины",
     desc: "Говяжий стейк, картофель по-деревенски, перечный соус",
     price: 4890,
     category: "hot",
-    image: "https://picsum.photos/id/1080/800/600",
+    image: "https://picsum.photos/id/1080/800/600", // Стейк
   },
   {
     id: 12,
@@ -102,7 +102,7 @@ const menuItems = [
     desc: "Куриное филе, сливочный соус, грибы и ароматные специи",
     price: 2890,
     category: "hot",
-    image: "https://picsum.photos/id/669/800/600",
+    image: "https://picsum.photos/id/669/800/600", // Курица
   },
   {
     id: 13,
@@ -110,7 +110,7 @@ const menuItems = [
     desc: "Спагетти, бекон, сливки, пармезан и яйцо",
     price: 2590,
     category: "hot",
-    image: "https://picsum.photos/id/201/800/600",
+    image: "https://picsum.photos/id/201/800/600", // Паста
   },
   {
     id: 14,
@@ -118,7 +118,7 @@ const menuItems = [
     desc: "Рис, говядина, морковь, лук и зира",
     price: 2290,
     category: "hot",
-    image: "https://picsum.photos/id/292/800/600",
+    image: "https://picsum.photos/id/292/800/600", // Плов
   },
   {
     id: 15,
@@ -126,17 +126,17 @@ const menuItems = [
     desc: "Филе лосося, лимон, овощи гриль и специи",
     price: 3990,
     category: "hot",
-    image: "https://picsum.photos/id/870/800/600",
+    image: "https://picsum.photos/id/870/800/600", // Лосось
   },
 
-  // === НАПИТКИ ===
+  // НАПИТКИ
   {
     id: 16,
     name: "Мохито безалкогольный",
     desc: "Лайм, свежая мята, сахарный сироп, газированная вода",
     price: 890,
     category: "drinks",
-    image: "https://picsum.photos/id/431/800/600",
+    image: "https://picsum.photos/id/431/800/600", // Мохито
   },
   {
     id: 17,
@@ -144,7 +144,7 @@ const menuItems = [
     desc: "Свежая клубника, лимон, сироп и газированная вода",
     price: 790,
     category: "drinks",
-    image: "https://picsum.photos/id/669/800/600",
+    image: "https://picsum.photos/id/669/800/600", // Лимонад
   },
   {
     id: 18,
@@ -152,7 +152,7 @@ const menuItems = [
     desc: "Эспрессо, молоко и нежная молочная пенка",
     price: 690,
     category: "drinks",
-    image: "https://picsum.photos/id/201/800/600",
+    image: "https://picsum.photos/id/201/800/600", // Капучино
   },
   {
     id: 19,
@@ -160,7 +160,7 @@ const menuItems = [
     desc: "Свежевыжатый сок из натуральных апельсинов",
     price: 890,
     category: "drinks",
-    image: "https://picsum.photos/id/292/800/600",
+    image: "https://picsum.photos/id/292/800/600", // Фреш
   },
   {
     id: 20,
@@ -168,7 +168,7 @@ const menuItems = [
     desc: "Черный чай, малина, клубника и натуральный мед",
     price: 690,
     category: "drinks",
-    image: "https://picsum.photos/id/1080/800/600",
+    image: "https://picsum.photos/id/1080/800/600", // Чай
   },
 ];
 
@@ -210,7 +210,7 @@ export default function JagerShefMenu() {
     }
     const orderText = `Новый заказ от стола №${tableNumber}!\n\n${cart.map((item, i) => `${i+1}. ${item.name} — ${item.price} ₸`).join('\n')}\n\nИтого: ${totalPrice} ₸`;
     window.open(`https://t.me/+77712345678?text=${encodeURIComponent(orderText)}`, '_blank');
-    alert("Заказ отправлен! Спасибо ❤️");
+    alert("✅ Заказ отправлен официанту!");
     setCart([]);
     setShowCart(false);
     setTableNumber("");
@@ -218,6 +218,7 @@ export default function JagerShefMenu() {
 
   return (
     <div className="min-h-screen bg-zinc-950 text-white">
+      {/* Шапка, меню, корзина и футер — без изменений */}
       <header className="sticky top-0 bg-black/95 backdrop-blur-lg z-50 border-b border-zinc-800">
         <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
           <div className="flex items-center gap-4">
@@ -258,9 +259,7 @@ export default function JagerShefMenu() {
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
               className={`px-8 py-4 rounded-3xl font-medium text-lg transition-all ${
-                activeCategory === cat.id 
-                  ? 'bg-orange-500 text-black shadow-xl shadow-orange-500/30' 
-                  : 'bg-zinc-900 hover:bg-zinc-800 border border-zinc-700'
+                activeCategory === cat.id ? 'bg-orange-500 text-black shadow-xl shadow-orange-500/30' : 'bg-zinc-900 hover:bg-zinc-800 border border-zinc-700'
               }`}
             >
               {cat.name}
@@ -294,7 +293,7 @@ export default function JagerShefMenu() {
         </div>
       </main>
 
-      {/* Корзина */}
+      {/* Корзина и футер оставлены без изменений */}
       {showCart && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
           <div className="bg-zinc-900 rounded-3xl max-w-lg w-full max-h-[90vh] overflow-auto">
@@ -351,8 +350,7 @@ export default function JagerShefMenu() {
         <div className="max-w-6xl mx-auto px-6 text-center text-zinc-400">
           <p className="text-2xl font-semibold text-white mb-2">JagerShef</p>
           <p>Актобе • Электронное меню</p>
-          <p className="mt-4">📍 Ваш адрес</p>
-          <p>☎️ +7 (XXX) XXX-XX-XX</p>
+          <p className="mt-4">📍 Ваш адрес • ☎️ +7 (XXX) XXX-XX-XX</p>
         </div>
       </footer>
     </div>
