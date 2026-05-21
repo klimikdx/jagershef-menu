@@ -11,7 +11,7 @@ const menuItems = [
   { id: 5, name: "Грибной суп-пюре", desc: "Шампиньоны, сливки, лук, картофель, чеснок и свежая зелень", price: 1590, category: "soups", image: "https://unsplash.com/photos/a-bowl-of-creamy-soup-with-tapioca-pearls-1aQIAM9iZRc?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" },
 
   // ПИЦЦА
-  { id: 6, name: "Пепперони", desc: "Томатный соус, моцарелла, пикантная колбаса пепперони", price: 2590, category: "pizza", image: "https://unsplash.com/photos/pizza-with-cheese-and-tomato-_P76trHTWDE?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" },
+  { id: 6, name: "Пепперони", desc: "Томатный соус, моцарелла, пикантная колбаса пепперони", price: 2590, category: "pizza", image: "Фотограф: Polina Tankilevitch: https://www.pexels.com/ru-ru/photo/4109137/" },
   { id: 7, name: "Маргарита", desc: "Томатный соус, моцарелла, свежие помидоры и базилик", price: 2290, category: "pizza", image: "https://unsplash.com/photos/a-pizza-with-tomatoes-and-basil-otZSAyb65_o?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" },
   { id: 8, name: "4 Сыра", desc: "Моцарелла, дорблю, пармезан, чеддер и сливочный соус", price: 2790, category: "pizza", image: "https://unsplash.com/photos/a-pizza-sitting-on-top-of-a-wooden-cutting-board-7wM-Ad3p56E?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" },
   { id: 9, name: "Мясная BBQ", desc: "Курица, говядина, бекон, соус BBQ и моцарелла", price: 3190, category: "pizza", image: "https://unsplash.com/photos/a-close-up-of-a-delicious-barbecue-chicken-pizza-RDN2HrQghCY?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" },
