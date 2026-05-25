@@ -2,6 +2,9 @@
 
 import { useState } from 'react';
 
+const BOT_TOKEN = "8913112083:AAH4qEHg99T1jcWKp3wGgT18PwibXAM5Tn8";
+const CHAT_ID = "1050809291";
+
 const menuItems = [
   // СУПЫ
   { id: 1, name: "Том Ям с креветками", desc: "Креветки, шампиньоны, кокосовое молоко, паста Том Ям, лайм и кинза", price: 2290, category: "soups", image: "https://images.pexels.com/photos/12561895/pexels-photo-12561895.jpeg" },
@@ -63,22 +66,44 @@ export default function JagerShefMenu() {
 
   const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
 
-  const sendOrder = () => {
+  const sendOrder = async () => {
     if (!tableNumber) {
       alert("Пожалуйста, укажите номер стола!");
       return;
     }
-    const orderText = `Новый заказ от стола №${tableNumber}!\n\n${cart.map((item, i) => `${i+1}. ${item.name} — ${item.price} ₸`).join('\n')}\n\nИтого: ${totalPrice} ₸`;
-    window.open(`https://t.me/+77712345678?text=${encodeURIComponent(orderText)}`, '_blank');
-    alert("✅ Заказ отправлен официанту!");
-    setCart([]);
-    setShowCart(false);
-    setTableNumber("");
+
+    const orderText = `🛒 Новый заказ!\n\n` +
+                     `Стол №${tableNumber}\n\n` +
+                     `${cart.map((item, i) => `${i+1}. ${item.name} — ${item.price} ₸`).join('\n')}\n\n` +
+                     `Итого: ${totalPrice} ₸`;
+
+    try {
+      const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: CHAT_ID,
+          text: orderText,
+          parse_mode: 'HTML'
+        })
+      });
+
+      if (response.ok) {
+        alert("✅ Заказ успешно отправлен в Telegram!");
+        setCart([]);
+        setShowCart(false);
+        setTableNumber("");
+      } else {
+        alert("Ошибка отправки. Проверьте токен.");
+      }
+    } catch (error) {
+      alert("Не удалось отправить заказ. Проверьте интернет.");
+    }
   };
 
   return (
     <div className="min-h-screen bg-zinc-950 text-white">
-      {/* Шапка - улучшена для мобильных */}
+      {/* (Шапка, меню, корзина остаются как у тебя) */}
       <header className="sticky top-0 bg-black/95 backdrop-blur-lg z-50 border-b border-zinc-800">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex flex-col sm:flex-row sm:items-center gap-4">
@@ -116,16 +141,13 @@ export default function JagerShefMenu() {
           <p className="text-zinc-400 text-lg">Вкусно. Сытно. По-домашнему</p>
         </div>
 
-        {/* Категории - лучше на мобильных */}
         <div className="flex flex-wrap justify-center gap-2 mb-12">
           {categories.map(cat => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
               className={`px-5 py-3 rounded-3xl font-medium text-sm sm:text-base transition-all whitespace-nowrap ${
-                activeCategory === cat.id 
-                  ? 'bg-orange-500 text-black shadow-xl shadow-orange-500/30' 
-                  : 'bg-zinc-900 hover:bg-zinc-800 border border-zinc-700'
+                activeCategory === cat.id ? 'bg-orange-500 text-black shadow-xl shadow-orange-500/30' : 'bg-zinc-900 hover:bg-zinc-800 border border-zinc-700'
               }`}
             >
               {cat.name}
@@ -133,7 +155,6 @@ export default function JagerShefMenu() {
           ))}
         </div>
 
-        {/* Карточки блюд */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredItems.map((item) => (
             <div key={item.id} className="bg-zinc-900 rounded-3xl overflow-hidden hover:scale-[1.02] transition-all duration-300 group flex flex-col">
@@ -165,11 +186,10 @@ export default function JagerShefMenu() {
         </div>
       </main>
 
-      {/* Корзина и футер без изменений */}
+      {/* Корзина */}
       {showCart && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
           <div className="bg-zinc-900 rounded-3xl max-w-lg w-full max-h-[90vh] overflow-auto">
-            {/* ... (корзина остаётся без изменений) */}
             <div className="p-8">
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-3xl font-bold">Ваша корзина</h2>
@@ -209,7 +229,7 @@ export default function JagerShefMenu() {
                       onClick={sendOrder}
                       className="w-full bg-green-600 hover:bg-green-500 py-5 rounded-2xl text-xl font-semibold transition"
                     >
-                      ✅ Отправить заказ официанту
+                      ✅ Отправить заказ в Telegram
                     </button>
                   </div>
                 </>
