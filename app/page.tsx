@@ -4,32 +4,32 @@ import { useState } from 'react';
 
 const menuItems = [
   // СУПЫ
-  { id: 1, name: "Том Ям с креветками", desc: "Креветки, шампиньоны, кокосовое молоко, паста Том Ям, лайм и кинза", price: 2290, category: "soups", image: "https://picsum.photos/id/292/800/600" },
-  { id: 2, name: "Куриный суп с лапшой", desc: "Куриное филе, домашняя лапша, морковь, картофель, зелень и специи", price: 1490, category: "soups", image: "https://picsum.photos/id/431/800/600" },
-  { id: 3, name: "Сырный крем-суп", desc: "Плавленый сыр, сливки, картофель, лук и хрустящие сухарики", price: 1690, category: "soups", image: "https://picsum.photos/id/870/800/600" },
-  { id: 4, name: "Борщ со сметаной", desc: "Говядина, свекла, капуста, картофель, морковь и свежая сметана", price: 1590, category: "soups", image: "https://picsum.photos/id/1080/800/600" },
-  { id: 5, name: "Грибной суп-пюре", desc: "Шампиньоны, сливки, лук, картофель, чеснок и свежая зелень", price: 1590, category: "soups", image: "https://picsum.photos/id/669/800/600" },
+  { id: 1, name: "Том Ям с креветками", desc: "Креветки, шампиньоны, кокосовое молоко, паста Том Ям, лайм и кинза", price: 2290, category: "soups", image: "https://images.pexels.com/photos/12561895/pexels-photo-12561895.jpeg" },
+  { id: 2, name: "Куриный суп с лапшой", desc: "Куриное филе, домашняя лапша, морковь, картофель, зелень и специи", price: 1490, category: "soups", image: "https://images.pexels.com/photos/8878621/pexels-photo-8878621.jpeg" },
+  { id: 3, name: "Сырный крем-суп", desc: "Плавленый сыр, сливки, картофель, лук и хрустящие сухарики", price: 1690, category: "soups", image: "https://images.pexels.com/photos/7133564/pexels-photo-7133564.jpeg" },
+  { id: 4, name: "Борщ со сметаной", desc: "Говядина, свекла, капуста, картофель, морковь и свежая сметана", price: 1590, category: "soups", image: "https://images.pexels.com/photos/19992957/pexels-photo-19992957.jpeg" },
+  { id: 5, name: "Грибной суп-пюре", desc: "Шампиньоны, сливки, лук, картофель, чеснок и свежая зелень", price: 1590, category: "soups", image: "https://images.pexels.com/photos/20051299/pexels-photo-20051299.jpeg" },
 
   // ПИЦЦА
-  { id: 6, name: "Пепперони", desc: "Томатный соус, моцарелла, пикантная колбаса пепперони", price: 2590, category: "pizza", image: "https://picsuimage: "https://images.pexels.com/photos/4109137/pexels-photo-4109137.jpeg?auto=compress&cs=tinysrgb&w=800"https://images.pexels.com/photos/4109137/pexels-photo-4109137.jpegm.photos/id/201/800/600" },
-  { id: 7, name: "Маргарита", desc: "Томатный соус, моцарелла, свежие помидоры и базилик", price: 2290, category: "pizza", image: "https://picsum.photos/id/292/800/600" },
-  { id: 8, name: "4 Сыра", desc: "Моцарелла, дорблю, пармезан, чеддер и сливочный соус", price: 2790, category: "pizza", image: "https://picsum.photos/id/870/800/600" },
-  { id: 9, name: "Мясная BBQ", desc: "Курица, говядина, бекон, соус BBQ и моцарелла", price: 3190, category: "pizza", image: "https://picsum.photos/id/106/800/600" },
-  { id: 10, name: "Овощная", desc: "Болгарский перец, помидоры, оливки, грибы и моцарелла", price: 2390, category: "pizza", image: "https://picsum.photos/id/431/800/600" },
+  { id: 6, name: "Пепперони", desc: "Томатный соус, моцарелла, пикантная колбаса пепперони", price: 2590, category: "pizza", image: "https://images.pexels.com/photos/4109137/pexels-photo-4109137.jpeg" },
+  { id: 7, name: "Маргарита", desc: "Томатный соус, моцарелла, свежие помидоры и базилик", price: 2290, category: "pizza", image: "https://images.pexels.com/photos/24786266/pexels-photo-24786266.jpeg" },
+  { id: 8, name: "4 Сыра", desc: "Моцарелла, Груша, дорблю, пармезан, чеддер и сливочный соус", price: 2790, category: "pizza", image: "https://images.pexels.com/photos/6213716/pexels-photo-6213716.jpeg" },
+  { id: 9, name: "Мясная BBQ", desc: "Курица, говядина, бекон, соус BBQ и моцарелла", price: 3190, category: "pizza", image: "https://images.pexels.com/photos/15832883/pexels-photo-15832883.jpeg" },
+  { id: 10, name: "Овощная", desc: "Болгарский перец, помидоры, оливки, грибы и моцарелла", price: 2390, category: "pizza", image: "https://images.pexels.com/photos/5903095/pexels-photo-5903095.jpeg" },
 
   // ГОРЯЧИЕ БЛЮДА
-  { id: 11, name: "Стейк из говядины", desc: "Говяжий стейк, картофель по-деревенски, перечный соус", price: 4890, category: "hot", image: "https://picsum.photos/id/1080/800/600" },
-  { id: 12, name: "Курица в сливочном соусе", desc: "Куриное филе, сливочный соус, грибы и ароматные специи", price: 2890, category: "hot", image: "https://picsum.photos/id/669/800/600" },
-  { id: 13, name: "Паста Карбонара", desc: "Спагетти, бекон, сливки, пармезан и яйцо", price: 2590, category: "hot", image: "https://picsum.photos/id/201/800/600" },
-  { id: 14, name: "Плов по-восточному", desc: "Рис, говядина, морковь, лук и зира", price: 2290, category: "hot", image: "https://picsum.photos/id/292/800/600" },
-  { id: 15, name: "Лосось на гриле", desc: "Филе лосося, лимон, овощи гриль и специи", price: 3990, category: "hot", image: "https://picsum.photos/id/870/800/600" },
+  { id: 11, name: "Стейк из говядины", desc: "Говяжий стейк, картофель по-деревенски, перечный соус", price: 4890, category: "hot", image: "https://images.pexels.com/photos/27305264/pexels-photo-27305264.jpeg" },
+  { id: 12, name: "Курица в сливочном соусе", desc: "Куриное филе, сливочный соус, грибы и ароматные специи", price: 2890, category: "hot", image: "https://images.pexels.com/photos/15058966/pexels-photo-15058966.jpeg" },
+  { id: 13, name: "Паста Карбонара", desc: "Спагетти, бекон, сливки, пармезан и яйцо", price: 2590, category: "hot", image: "https://images.pexels.com/photos/20352388/pexels-photo-20352388.jpeg" },
+  { id: 14, name: "Плов по-восточному", desc: "Рис, говядина, морковь, лук и зира", price: 2290, category: "hot", image: "https://images.pexels.com/photos/10541694/pexels-photo-10541694.jpeg" },
+  { id: 15, name: "Лосось на гриле", desc: "Филе лосося, лимон, овощи гриль и специи", price: 3990, category: "hot", image: "https://images.pexels.com/photos/14537684/pexels-photo-14537684.jpeg" },
 
   // НАПИТКИ
-  { id: 16, name: "Мохито безалкогольный", desc: "Лайм, свежая мята, сахарный сироп, газированная вода", price: 890, category: "drinks", image: "https://picsum.photos/id/431/800/600" },
-  { id: 17, name: "Клубничный лимонад", desc: "Свежая клубника, лимон, сироп и газированная вода", price: 790, category: "drinks", image: "https://picsum.photos/id/669/800/600" },
-  { id: 18, name: "Капучино", desc: "Эспрессо, молоко и нежная молочная пенка", price: 690, category: "drinks", image: "https://picsum.photos/id/201/800/600" },
-  { id: 19, name: "Апельсиновый фреш", desc: "Свежевыжатый сок из натуральных апельсинов", price: 890, category: "drinks", image: "https://picsum.photos/id/292/800/600" },
-  { id: 20, name: "Чай с ягодами", desc: "Черный чай, малина, клубника и натуральный мед", price: 690, category: "drinks", image: "https://picsum.photos/id/1080/800/600" },
+  { id: 16, name: "Мохито безалкогольный", desc: "Лайм, свежая мята, сахарный сироп, газированная вода", price: 890, category: "drinks", image: "https://images.pexels.com/photos/36593623/pexels-photo-36593623.jpeg" },
+  { id: 17, name: "Клубничный лимонад", desc: "Свежая клубника, лимон, сироп и газированная вода", price: 790, category: "drinks", image: "https://images.pexels.com/photos/8584751/pexels-photo-8584751.jpeg" },
+  { id: 18, name: "Капучино", desc: "Эспрессо, молоко и нежная молочная пенка", price: 690, category: "drinks", image: "https://images.pexels.com/photos/25328665/pexels-photo-25328665.jpeg" },
+  { id: 19, name: "Апельсиновый фреш", desc: "Свежевыжатый сок из натуральных апельсинов", price: 890, category: "drinks", image: "https://images.pexels.com/photos/16427702/pexels-photo-16427702.jpeg" },
+  { id: 20, name: "Чай с ягодами", desc: "Черный чай, малина, клубника и натуральный мед", price: 690, category: "drinks", image: "https://images.pexels.com/photos/2633397/pexels-photo-2633397.jpeg" },
 ];
 
 export default function JagerShefMenu() {
@@ -48,7 +48,7 @@ export default function JagerShefMenu() {
   ];
 
   const filteredItems = menuItems.filter(item => {
-    const matchesSearch = item.name.toLowerCase().includes(search.toLowerCase()) || 
+    const matchesSearch = item.name.toLowerCase().includes(search.toLowerCase()) ||
                          item.desc.toLowerCase().includes(search.toLowerCase());
     const matchesCategory = activeCategory === "all" || item.category === activeCategory;
     return matchesSearch && matchesCategory;
@@ -118,9 +118,7 @@ export default function JagerShefMenu() {
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
               className={`px-8 py-4 rounded-3xl font-medium text-lg transition-all ${
-                activeCategory === cat.id 
-                  ? 'bg-orange-500 text-black shadow-xl shadow-orange-500/30' 
-                  : 'bg-zinc-900 hover:bg-zinc-800 border border-zinc-700'
+                activeCategory === cat.id ? 'bg-orange-500 text-black shadow-xl shadow-orange-500/30' : 'bg-zinc-900 hover:bg-zinc-800 border border-zinc-700'
               }`}
             >
               {cat.name}
@@ -131,7 +129,7 @@ export default function JagerShefMenu() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredItems.map((item) => (
             <div key={item.id} className="bg-zinc-900 rounded-3xl overflow-hidden hover:scale-[1.04] transition-all duration-300 group flex flex-col">
-              <div className="h-64 bg-zinc-800 relative">
+              <div className="h-64 bg-zinc-800">
                 <img 
                   src={item.image} 
                   alt={item.name}
@@ -141,7 +139,6 @@ export default function JagerShefMenu() {
               <div className="p-7 flex flex-col flex-1">
                 <h3 className="text-2xl font-semibold mb-3">{item.name}</h3>
                 <p className="text-zinc-400 mb-6 flex-1 line-clamp-3">{item.desc}</p>
-                
                 <div className="flex items-center justify-between mt-auto">
                   <div className="text-4xl font-bold text-orange-400">
                     {item.price.toLocaleString('ru-RU')} ₸
@@ -159,7 +156,6 @@ export default function JagerShefMenu() {
         </div>
       </main>
 
-      {/* Корзина */}
       {showCart && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
           <div className="bg-zinc-900 rounded-3xl max-w-lg w-full max-h-[90vh] overflow-auto">
@@ -216,7 +212,7 @@ export default function JagerShefMenu() {
         <div className="max-w-6xl mx-auto px-6 text-center text-zinc-400">
           <p className="text-2xl font-semibold text-white mb-2">JagerShef</p>
           <p>Актобе • Электронное меню</p>
-          <p className="mt-4">📍 Ваш адрес • ☎️ +7 (XXX) XXX-XX-XX</p>
+          <p className="mt-4">📍 ТД Нектар ​Улица Нагашбай Шайкенова, 6​ 1 этаж • ☎️ +7 (705) 666-27-19</p>
         </div>
       </footer>
     </div>
