@@ -78,47 +78,54 @@ export default function JagerShefMenu() {
 
   return (
     <div className="min-h-screen bg-zinc-950 text-white">
+      {/* Шапка - улучшена для мобильных */}
       <header className="sticky top-0 bg-black/95 backdrop-blur-lg z-50 border-b border-zinc-800">
-        <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <div className="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center text-5xl shadow-lg">🦌</div>
-            <div>
-              <h1 className="text-4xl font-bold tracking-tight">JagerShef</h1>
-              <p className="text-zinc-400 -mt-1">Ресторан • Актобе</p>
+        <div className="max-w-6xl mx-auto px-4 py-4">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-orange-600 rounded-2xl flex items-center justify-center text-4xl shadow-lg flex-shrink-0">🦌</div>
+              <div>
+                <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">JagerShef</h1>
+                <p className="text-zinc-400 text-sm">Ресторан • Актобе</p>
+              </div>
             </div>
-          </div>
 
-          <div className="flex items-center gap-6">
-            <input
-              type="text"
-              placeholder="🔍 Поиск блюда..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-3 w-96 focus:outline-none focus:border-orange-500"
-            />
+            <div className="flex-1 w-full">
+              <input
+                type="text"
+                placeholder="🔍 Поиск блюда..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-5 py-3 text-base focus:outline-none focus:border-orange-500"
+              />
+            </div>
+
             <button 
               onClick={() => setShowCart(!showCart)}
-              className="relative bg-orange-500 hover:bg-orange-600 text-black font-semibold px-6 py-3 rounded-2xl flex items-center gap-2 transition"
+              className="relative bg-orange-500 hover:bg-orange-600 text-black font-semibold px-5 py-3 rounded-2xl flex items-center justify-center gap-2 transition whitespace-nowrap"
             >
-              🛒 Корзина ({cart.length})
+              🛒 <span className="hidden sm:inline">Корзина</span> ({cart.length})
             </button>
           </div>
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-6 py-12">
-        <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold mb-3">Добро пожаловать в JagerShef</h2>
-          <p className="text-zinc-400 text-xl">Вкусно. Сытно. По-домашнему</p>
+      <main className="max-w-6xl mx-auto px-4 py-8">
+        <div className="text-center mb-10">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-3">Добро пожаловать в JagerShef</h2>
+          <p className="text-zinc-400 text-lg">Вкусно. Сытно. По-домашнему</p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-16">
+        {/* Категории - лучше на мобильных */}
+        <div className="flex flex-wrap justify-center gap-2 mb-12">
           {categories.map(cat => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-8 py-4 rounded-3xl font-medium text-lg transition-all ${
-                activeCategory === cat.id ? 'bg-orange-500 text-black shadow-xl shadow-orange-500/30' : 'bg-zinc-900 hover:bg-zinc-800 border border-zinc-700'
+              className={`px-5 py-3 rounded-3xl font-medium text-sm sm:text-base transition-all whitespace-nowrap ${
+                activeCategory === cat.id 
+                  ? 'bg-orange-500 text-black shadow-xl shadow-orange-500/30' 
+                  : 'bg-zinc-900 hover:bg-zinc-800 border border-zinc-700'
               }`}
             >
               {cat.name}
@@ -126,26 +133,28 @@ export default function JagerShefMenu() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Карточки блюд */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredItems.map((item) => (
-            <div key={item.id} className="bg-zinc-900 rounded-3xl overflow-hidden hover:scale-[1.04] transition-all duration-300 group flex flex-col">
-              <div className="h-64 bg-zinc-800">
+            <div key={item.id} className="bg-zinc-900 rounded-3xl overflow-hidden hover:scale-[1.02] transition-all duration-300 group flex flex-col">
+              <div className="h-52 sm:h-60 bg-zinc-800 relative">
                 <img 
                   src={item.image} 
                   alt={item.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="p-7 flex flex-col flex-1">
-                <h3 className="text-2xl font-semibold mb-3">{item.name}</h3>
-                <p className="text-zinc-400 mb-6 flex-1 line-clamp-3">{item.desc}</p>
+              <div className="p-5 sm:p-7 flex flex-col flex-1">
+                <h3 className="text-xl sm:text-2xl font-semibold mb-2 line-clamp-2">{item.name}</h3>
+                <p className="text-zinc-400 mb-5 text-sm sm:text-base flex-1 line-clamp-3">{item.desc}</p>
+                
                 <div className="flex items-center justify-between mt-auto">
-                  <div className="text-4xl font-bold text-orange-400">
+                  <div className="text-2xl sm:text-3xl font-bold text-orange-400">
                     {item.price.toLocaleString('ru-RU')} ₸
                   </div>
                   <button 
                     onClick={() => addToCart(item)}
-                    className="bg-orange-500 hover:bg-orange-600 text-black font-semibold px-8 py-3.5 rounded-2xl transition"
+                    className="bg-orange-500 hover:bg-orange-600 text-black font-semibold px-6 py-3 rounded-2xl text-sm transition active:scale-95"
                   >
                     + В корзину
                   </button>
@@ -156,9 +165,11 @@ export default function JagerShefMenu() {
         </div>
       </main>
 
+      {/* Корзина и футер без изменений */}
       {showCart && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
           <div className="bg-zinc-900 rounded-3xl max-w-lg w-full max-h-[90vh] overflow-auto">
+            {/* ... (корзина остаётся без изменений) */}
             <div className="p-8">
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-3xl font-bold">Ваша корзина</h2>
@@ -212,7 +223,7 @@ export default function JagerShefMenu() {
         <div className="max-w-6xl mx-auto px-6 text-center text-zinc-400">
           <p className="text-2xl font-semibold text-white mb-2">JagerShef</p>
           <p>Актобе • Электронное меню</p>
-          <p className="mt-4">📍 ТД Нектар ​Улица Нагашбай Шайкенова, 6​ 1 этаж • ☎️ +7 (705) 666-27-19</p>
+          <p className="mt-4">📍 ТД Нектар Улица Нагашбай Шайкенова, 6 1 этаж • ☎️ +7 (705) 666-27-19</p>
         </div>
       </footer>
     </div>
